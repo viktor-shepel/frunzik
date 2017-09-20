@@ -13,8 +13,8 @@ struct allocation_t {
 static allocation_t* allocation(
 	void* block,
 	finalizer_t finalize,
-	allocation_t* prev)
-{
+	allocation_t* prev
+) {
 	allocation_t* record = malloc(sizeof *record);
 
 	return record
