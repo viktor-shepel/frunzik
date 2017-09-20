@@ -1,7 +1,8 @@
 TARGET = libfrunzik.so
 
 CC = gcc
-CFLAGS += -g -Wall -std=c99 -MMD -MP -DDEBUG -fPIC
+#CFLAGS += -g -Wall -std=c99 -MMD -MP -DDEBUG -fPIC
+CFLAGS += -g -O2 -foptimize-sibling-calls -Wall -std=c99 -MMD -MP -DDEBUG -fPIC
 
 LINK = gcc
 LINKFLAGS = -g -shared
