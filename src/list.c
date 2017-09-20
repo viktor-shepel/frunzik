@@ -1,7 +1,7 @@
 #include "list.h"
 #include "gc.h"
 
-list_t* cons(void* head, void* tail) {
+list_t* cons(void* head, list_t* tail) {
 	list_t* list = gc_malloc(sizeof *list);
 
 	return list ? (*list = (list_t) { head, tail }, list) : NULL;
@@ -11,7 +11,7 @@ void* head(list_t* list) {
 	return list->head; 
 }
 
-void* tail(list_t* list) {
+list_t* tail(list_t* list) {
 	return list->tail; 
 }
 

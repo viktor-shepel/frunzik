@@ -8,12 +8,12 @@ typedef struct list_t list_t;
 
 struct list_t {
 	void* head;
-	void* tail;
+	list_t* tail;
 };
 
-list_t* cons(void* head, void* tail);
+list_t* cons(void* head, list_t* tail);
 void* head(list_t* list);
-void* tail(list_t* list);
+list_t* tail(list_t* list);
 bool is_empty(list_t* list);
 list_t* concat(list_t* left, list_t* right);
 void* nth(size_t index, list_t* list);

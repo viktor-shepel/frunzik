@@ -48,7 +48,7 @@ $ ./my-awesome-app
 ```c
 struct list_t {
   void* head;
-  void* tail;
+  list_t* tail;
 };
 ```
 Is a data structure that represents node within singly linked list.
@@ -64,7 +64,7 @@ list_t* single_element_list = &(list_t) { 1, NULL };
 
 ### cons
 ```c
-list_t* cons(void* head, void* tail)
+list_t* cons(void* head, list_t* tail)
 ```
 Is a list constructor function.
 It takes reference to object being inserted `head` and reference to existing list `tail` and produces new list.
@@ -104,7 +104,7 @@ head(list) == 1;
 
 ### tail
 ```c
-void* tail(list_t* list)
+list_t* tail(list_t* list)
 ```
 
 Is a list query function.
